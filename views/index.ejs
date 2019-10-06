@@ -1,49 +1,3 @@
-<!--
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <h3>Sports: </h3>
-    <br>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 400px; height:200px;">
-      <div class="carousel-inner">
-        <% for(var i=0; i < sports_ejs.length; i++) { %>
-          <% if(i == 0) {%>
-            <div class="item active">
-              <img src="images/pic2.jpg">
-            </div>
-            <% } else { %>
-              <div class="item">
-                <img src="images/pic2.jpg">
-              </div>
-              <% } %>
-              <% } %>
-            </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      <!--
-      <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-  </body>
-  </html>
--->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -60,125 +14,290 @@
   <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 
 </head>
 <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
   <section class="site-section" id="section-portfolio">
     <div class="container">
+
+      <img src="images/user.png" style="width:4%; cursor:pointer" class="rounded float-right" alt="user">
+      <!--<span class="glyphicon glyphicon-user pull-right" font-size="25px"></span>-->
       <div class="row">
+        <div class="text-left">
+          <img src="images/favicon.png" style="width:17%; cursor:pointer" class="rounded float-left" alt="user">
+        </div>
         <div class="text-center col-md-12">
-          <h2>Interests</h2>
+          <h2><strong>Find someone alike...</strong></h2>
         </div>
       </div>
       <div class="filters">
         <ul>
           <li class="active" data-filter="*">All</li>
-          <li data-filter=".packaging">Sports</li>
-          <li data-filter=".mockup">Movies</li>
-          <li data-filter=".typography">Adventure</li>
-          <li data-filter=".photography">Shopping</li>
-          <li data-filter=".photography">Events</li>
+          <li data-filter=".sports">Sports</li>
+          <li data-filter=".movies">Movies</li>
+          <li data-filter=".shopping">Shopping</li>
+          <li data-filter=".events">Events</li>
+          <li data-filter=".fun">Fun</li>
+          <li data-filter=".travel">Travel</li>
         </ul>
       </div>
 
       <div class="filters-content">
         <div class="row grid">
-          <div class="single-portfolio col-sm-4 all mockup">
+          <div class="single-portfolio col-sm-4 all shopping">
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
                 <a data-toggle="modal" data-target="#modalTime">
-                  <img class="image img-fluid" src="images/p1.jpg" alt="" >
+                  <img class="image img-fluid" style="cursor:pointer" src="images/street shopping.png" alt="" >
                 </a>
               </div>
             </div>
             <div class="p-inner">
-              <h4>Square Box Mockup</h4>
-              <div class="cat">Mockup</div>
+              <h4>Street Shopping</h4>
+              <div class="cat">Shopping</div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all mockup">
+          <div class="single-portfolio col-sm-4 all sports">
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
                 <a data-toggle="modal" data-target="#modalTime">
-                  <img class="image img-fluid" src="images/p2.jpg" alt="">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/badminton.png" alt="">
                 </a>
               </div>
             </div>
             <div class="p-inner">
-              <h4>Product Box Package Mockup</h4>
-              <div class="cat">Mockup</div>
+              <h4>Badminton</h4>
+              <div class="cat">Sports</div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all packaging">
+          <div class="single-portfolio col-sm-4 all sports">
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p3.jpg" alt="">
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/basketball.png" alt="">
+                </a>
               </div>
-              <a href="images/p3.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-                </div>
-              </a>
-
             </div>
             <div class="p-inner">
-              <h4>Creative Package Design</h4>
-              <div class="cat">Packaging</div>
+              <h4>Basketball</h4>
+              <div class="cat">Sports</div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all packaging">
+          <div class="single-portfolio col-sm-4 all sports">
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p4.jpg" alt="">
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/cardio.png" alt="">
+                </a>
               </div>
-              <a href="images/p4.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-                </div>
-              </a>
             </div>
             <div class="p-inner">
-              <h4>Packaging Brand</h4>
-              <div class="cat">Packaging</div>
+              <h4>Cardio</h4>
+              <div class="cat">Sports</div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all typography">
+          <div class="single-portfolio col-sm-4 all sports">
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p5.jpg" alt="">
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/mma.png" alt="">
+                </a>
               </div>
-              <a href="images/p5.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-                </div>
-              </a>
             </div>
             <div class="p-inner">
-              <h4>Isometric 3D Extrusion</h4>
-              <div class="cat">Typography</div>
+              <h4>MMA</h4>
+              <div class="cat">Sports</div>
             </div>
           </div>
-          <div class="single-portfolio col-sm-4 all photography">
+          <div class="single-portfolio col-sm-4 all movies">
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="images/p6.jpg" alt="">
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/once upon a time.png" alt="">
+                </a>
               </div>
-              <a href="images/p6.jpg" class="img-pop-up">
-                <div class="middle">
-                  <div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-                </div>
-              </a>
             </div>
             <div class="p-inner">
-              <h4>White Space Photography</h4>
-              <div class="cat">photography</div>
+              <h4>Once Upon A Time</h4>
+              <div class="cat">Movies In Theatre</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all movies">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/lion king.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Lion Ling</h4>
+              <div class="cat">Movies In Theatre</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all movies">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/it.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>IT 2</h4>
+              <div class="cat">Movies In Theatre</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all fun">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/axe Throwing.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Axe Throwing</h4>
+              <div class="cat">Fun</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all fun">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/partying.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Partying</h4>
+              <div class="cat">Fun</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all fun">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/ice skating.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Ice Skating</h4>
+              <div class="cat">Fun</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all fun">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/pool.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Pool</h4>
+              <div class="cat">Fun</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all fun">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/rock climbing.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Rock Climbing</h4>
+              <div class="cat">Fun</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all fun">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/trampoline.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Trampoline Park</h4>
+              <div class="cat">Fun</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all events">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/concert.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Concerts</h4>
+              <div class="cat">Events</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all events">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/hacking.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Hackathons</h4>
+              <div class="cat">Events</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all events">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/theatre.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Theatre</h4>
+              <div class="cat">Events</div>
+            </div>
+          </div>
+          <div class="single-portfolio col-sm-4 all travel">
+            <div class="relative">
+              <div class="thumb">
+                <div class="overlay overlay-bg"></div>
+                <a data-toggle="modal" data-target="#modalTime">
+                  <img class="image img-fluid" style="cursor:pointer" src="images/road trip.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="p-inner">
+              <h4>Road Tripping</h4>
+              <div class="cat">Travel</div>
             </div>
           </div>
         </div>
@@ -199,9 +318,9 @@
         <div class="text-center mt-4">
           <form method="post" name="timings">
           <button class="btn btn-cyan btn-block mt-1" type="submit" name="time" value="today">Today<i class="fas fa-sign-in ml-1"></i></button>
-          <button class="btn btn-cyan btn-block mt-1">Tomorrow<input type="submit" name="time" value="tomorrow"><i class="fas fa-sign-in ml-1"></i></button>
-          <button class="btn btn-cyan btn-block mt-1">This weekend<input type="submit" name="time" value="weekend"><i class="fas fa-sign-in ml-1"></i></button>
-          <button class="btn btn-cyan btn-block mt-1">I'm not in a hurry<input type="submit" name="time" value="nohurry"><i class="fas fa-sign-in ml-1"></i></button>
+          <button class="btn btn-cyan btn-block mt-1">Tomorrow<i class="fas fa-sign-in ml-1"></i></button>
+          <button class="btn btn-cyan btn-block mt-1">This weekend<i class="fas fa-sign-in ml-1"></i></button>
+          <button class="btn btn-cyan btn-block mt-1" type="submit" name="time" value="today">I'm not in a hurry<i class="fas fa-sign-in ml-1"></i></button>
           </form>
         </div>
       </div>
@@ -212,6 +331,12 @@
 </div>
 <!--Modal: Login with Avatar Form-->
 
+<style>
+.glyphicon {
+    font-size: 35px;
+}
+
+</style>
 
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/popper.min.js"></script>

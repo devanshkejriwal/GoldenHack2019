@@ -1,7 +1,11 @@
 const express = require('express')
+const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require("body-parser");
 const path = require("path")
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 // Database setup
 mongoose.connect('mongodb://localhost:27017/goldenhack', {useNewUrlParser: true});
 const db = mongoose.connection
@@ -19,7 +23,6 @@ const categorySchema = mongoose.Schema({
 
 // Application setup
 const port = 3000
-const app = express()
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`)
 })
@@ -67,5 +70,8 @@ app.get('/', (req,res) => {
 
 app.post('/', function(req,res) {
   var inputvalue = req.body.time
-  console.log(inputvalue)
+  console.log("I was called")
+//  window.open('localhost:8080/chat?username=Devansh', '_blank');
+//  window.open('', '_blank');
+  res.redirect('http://localhost:8080/chat?username=Devansh')
 })
