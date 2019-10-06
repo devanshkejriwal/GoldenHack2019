@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require("body-parser");
-
+const path = require("path")
 // Database setup
 mongoose.connect('mongodb://localhost:27017/goldenhack', {useNewUrlParser: true});
 const db = mongoose.connection
@@ -32,14 +32,15 @@ app.set("views", __dirname + "/views");
 
 //Use body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(express.static(__dirname + "/views"));
 
 // API's
+/*
 app.get('/', (req,res) => {
   res.send("Hello World");
 })
-
-app.get('/createcategory', (req,res) => {
+*/
+app.get('/', (req,res) => {
   //Sample query
   var Category = mongoose.model('Category',categorySchema)
   var sports = ['Squash', 'Badminton', 'Pool', 'Swimming', 'Basketball', 'MMA']
@@ -59,8 +60,12 @@ app.get('/createcategory', (req,res) => {
 
   insertCategories.forEach(function(category) {
     Category.findOneAndUpdate(category,category, {upsert: true}, function(err, doc) {
-      console.log(doc)
     })
   })
   res.render("index", {sports_ejs: sports})
+})
+
+app.post('/', function(req,res) {
+  var inputvalue = req.body.time
+  console.log(inputvalue)
 })
